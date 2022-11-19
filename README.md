@@ -45,4 +45,18 @@ Copy `.env.example` to `.env` and update DB and MAIL credentials
 ```bash
   php artisan serve
 ```
+### Testing API
 
+```curl
+curl --location --request POST 'http://127.0.0.1:8000/api/order' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--data-raw '{
+    "products": [
+        {
+            "product_id": 1,
+            "quantity": 1
+        }
+    ]
+}'
+```
